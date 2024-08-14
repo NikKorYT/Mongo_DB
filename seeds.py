@@ -37,6 +37,11 @@ def seed_qoutes():
                 quote=quote["quote"],
             )
             quote.save()
+            
+def clear_db():
+    authors.objects().delete()
+    qoutes.objects().delete()
+    print("DB cleared!")
 
 
 if __name__ == "__main__":
@@ -52,6 +57,7 @@ if __name__ == "__main__":
 
     # seed authors and qoutes
     try:
+        clear_db()
         seed_authors()
         seed_qoutes()
         print("Seeding completed!")
