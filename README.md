@@ -1,16 +1,16 @@
 # MongoDB + RabbitMQ Quote Management System
 
-A distributed quote management system that demonstrates MongoDB integration with RabbitMQ message queuing for asynchronous email processing.
+A distributed quote management system with MongoDB integration and RabbitMQ message queuing for asynchronous email processing.
 
-## 🚀 Features
+## Features
 
-- **MongoDB Integration**: Uses MongoEngine ODM for document modeling and database operations
-- **Message Queue System**: RabbitMQ implementation for asynchronous user notification processing
-- **Data Seeding**: Automated population of quotes and authors from JSON files
-- **Interactive Search**: Command-line interface for searching quotes by author, tag, or multiple tags
-- **Producer/Consumer Pattern**: Distributed architecture for scalable email processing
+- MongoDB integration using MongoEngine ODM for document modeling and database operations
+- RabbitMQ implementation for asynchronous user notification processing
+- Automated population of quotes and authors from JSON files
+- Command-line interface for searching quotes by author, tag, or multiple tags
+- Producer/Consumer pattern for scalable email processing
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────┐    ┌─────────────────┐
@@ -25,7 +25,7 @@ A distributed quote management system that demonstrates MongoDB integration with
 └─────────────────┘    └──────────────┘    └─────────────────┘
 ```
 
-## 📊 Data Models
+## Data Models
 
 ### Authors
 ```python
@@ -52,22 +52,22 @@ class users(Document):
     message_sent_status = BooleanField(required=True, default=False)
 ```
 
-## 🛠️ Technologies Used
+## Technologies Used
 
-- **Database**: MongoDB with MongoEngine ODM
-- **Message Broker**: RabbitMQ with Pika library
-- **Data Generation**: Faker for test data
-- **Configuration**: ConfigParser for secure credential management
-- **Languages**: Python 3.x
+- Database: MongoDB with MongoEngine ODM
+- Message Broker: RabbitMQ with Pika library
+- Data Generation: Faker for test data
+- Configuration: ConfigParser for credential management
+- Language: Python 3.x
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python 3.7+
-- MongoDB Atlas account (or local MongoDB instance)
+- MongoDB Atlas account or local MongoDB instance
 - RabbitMQ server
-- Required Python packages (see requirements below)
+- Required Python packages (see installation)
 
-## 🔧 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -104,7 +104,7 @@ class users(Document):
    # Follow RabbitMQ installation guide for your OS
    ```
 
-## 🚀 Usage
+## Usage
 
 ### 1. Seed Database with Sample Data
 ```bash
@@ -120,7 +120,7 @@ This will:
 python request.py
 ```
 
-**Available commands:**
+Commands:
 - `name:Albert Einstein` - Find quotes by author name
 - `tag:life` - Find quotes by single tag
 - `tags:life,wisdom,success` - Find quotes by multiple tags
@@ -143,13 +143,13 @@ This will:
 - Simulate sending emails to users
 - Update user status in MongoDB
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Mongo_DB/
 ├── configs/
 │   ├── config.ini.example  # Template for database configuration
-│   └── config.ini          # Your actual config (not in git)
+│   └── config.ini          # Actual config (not in git)
 ├── contents/
 │   ├── authors.json        # Sample authors data
 │   └── qoutes.json         # Sample quotes data
@@ -162,41 +162,41 @@ Mongo_DB/
 └── README.md               # This file
 ```
 
-## 🔍 Key Features Demonstrated
+## Key Features
 
 ### MongoDB Operations
-- **Document Modeling**: Complex relationships using ReferenceField
-- **CRUD Operations**: Create, read, update operations
-- **Query Patterns**: Field matching, array queries, reference lookups
-- **Connection Management**: Secure connection with authentication
+- Document Modeling: Complex relationships using ReferenceField
+- CRUD Operations: Create, read, update operations
+- Query Patterns: Field matching, array queries, reference lookups
+- Connection Management: Secure connection with authentication
 
 ### RabbitMQ Integration
-- **Producer Pattern**: Publishing messages to queues
-- **Consumer Pattern**: Processing messages asynchronously
-- **Message Durability**: Persistent message delivery
-- **Connection Management**: Proper connection handling
+- Producer Pattern: Publishing messages to queues
+- Consumer Pattern: Processing messages asynchronously
+- Message Durability: Persistent message delivery
+- Connection Management: Proper connection handling
 
 ### Distributed System Design
-- **Separation of Concerns**: Different scripts for different responsibilities
-- **Asynchronous Processing**: Non-blocking email notifications
-- **Scalability**: Can run multiple consumers for load distribution
-- **Fault Tolerance**: Message acknowledgment and error handling
+- Separation of Concerns: Different scripts for different responsibilities
+- Asynchronous Processing: Non-blocking email notifications
+- Scalability: Can run multiple consumers for load distribution
+- Fault Tolerance: Message acknowledgment and error handling
 
-## 🔄 Workflow Example
+## Workflow
 
-1. **Data Setup**: Run `seeds.py` to populate quotes and authors
-2. **User Generation**: Run `producer.py` to create users and queue notifications
-3. **Background Processing**: Run `consumer.py` to process email queue
-4. **Interactive Search**: Use `request.py` to search through quotes
+1. Data Setup: Run `seeds.py` to populate quotes and authors
+2. User Generation: Run `producer.py` to create users and queue notifications
+3. Background Processing: Run `consumer.py` to process email queue
+4. Interactive Search: Use `request.py` to search through quotes
 
-## 🧪 Sample Data
+## Sample Data
 
 The system includes sample data with:
-- **Authors**: Famous personalities with biographical information
-- **Quotes**: Inspirational quotes tagged by themes
-- **Users**: Generated fake users for testing the notification system
+- Authors: Famous personalities with biographical information
+- Quotes: Inspirational quotes tagged by themes
+- Users: Generated fake users for testing the notification system
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -204,14 +204,10 @@ The system includes sample data with:
 4. Push to the branch
 5. Create a Pull Request
 
-## 📝 License
+## License
 
-This project is part of a learning module demonstrating MongoDB and RabbitMQ integration patterns.
-
-## 📞 Contact
-
-For questions about this implementation, please refer to the repository owner.
+This project demonstrates MongoDB and RabbitMQ integration patterns.
 
 ---
 
-*This project demonstrates practical implementation of NoSQL databases with message queuing systems, showcasing distributed system architecture and asynchronous processing patterns.*
+*Implementation of NoSQL databases with message queuing systems, showcasing distributed system architecture and asynchronous processing patterns.*
