@@ -1,0 +1,4 @@
+[DB]
+USER=your_mongodb_username
+PASS=your_mongodb_password
+DOMAIN=your_mongodb_cluster.mongodb.net
