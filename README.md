@@ -94,8 +94,6 @@ class users(Document):
    PASS=your_mongodb_password
    DOMAIN=your_mongodb_cluster.mongodb.net
    ```
-   
-   **⚠️ Important**: Never commit `config.ini` with real credentials to version control!
 
 4. **Start RabbitMQ server**
    ```bash
